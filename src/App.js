@@ -5,7 +5,7 @@ import Home from './components/Home';
 function App() {
   return (
 <>
-<h1>hello world</h1>
+<h1>FLy Faizan✈️</h1>
 <Home />
 </>
   );

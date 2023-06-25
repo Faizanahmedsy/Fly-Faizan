@@ -39,27 +39,27 @@ const Home = () => {
                 return (
                     <div key={item.id}>
                         <Table striped bordered hover>
-                            {/* <thead>
+                            <thead>
                                 <th>Name</th>
                                 <th>Country</th>
                                 <th>Head Quaters</th>
                                 <th>Established</th>
                                 <th>Website</th>
-                            </thead> */}
+                            </thead>
                             <tbody>
                                 <tr>
                                     <td>{item.name}</td>
-                                </tr>
-                                <tr>
+                                {/* </tr> */}
+                                {/* <tr> */}
                                     <td>{item.country}</td>
-                                </tr>
-                                <tr>
+                                {/* </tr> */}
+                                {/* <tr> */}
                                     <td>{item.head_quaters}</td>
-                                </tr>
-                                <tr>
+                                {/* </tr>
+                                <tr> */}
                                 <td>{item.established}</td>
-                                </tr>
-                                <tr>
+                                {/* </tr>
+                                <tr> */}
                                 <td>{item.website}</td>
                                 </tr>
                             {/* </tr> */}
