@@ -19,7 +19,7 @@ const Pagination = ({ totalPost, postsPerPage, setCurrentPage }) => {
                 return (
                     <>
                         {/* <button onClick={()=> getPrevPage()}>Prev</button> */}
-                        <button key={index}
+                        <button className='btn btn-dark'  key={index}
                             onClick={() => { setCurrentPage(page) }}>{page}</button>
                         {/* <button onClick={()=> getNextPage()}>Next</button> */}
                     </>

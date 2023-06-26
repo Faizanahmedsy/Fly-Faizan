@@ -6,6 +6,7 @@ function App() {
     <>
       <h1>FLy Faizan✈️</h1>
       <Home />
+      
     </>
   );
 }
