@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import FlightList from './FlightList';
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import axios from 'axios'; 
+import axios from 'axios';
 import { createContext } from 'react';
+import Pagination from './Pagination';
 
 export const UserContext = createContext();
 
@@ -51,11 +52,17 @@ const Home = () => {
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = data ? data.slice(indexOfFirstPost, indexOfLastPost) : [];
 
+    const totalPosts = data ? data.length : 0;
+
+
     return (
         <>
             <UserContext.Provider value={currentPosts}>
                 <ProgressBar now={20} />
                 <FlightList data={currentPosts} isLoading={isLoading} />
+                <Pagination totalPost={totalPosts} postsPerPage={postsPerPage}
+                    setCurrentPage={setCurrentPage}
+                />
             </UserContext.Provider>
         </>
     );
