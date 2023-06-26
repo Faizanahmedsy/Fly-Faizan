@@ -4,7 +4,6 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import axios from 'axios';
 import { createContext } from 'react';
 import Pagination from './Pagination';
-
 export const UserContext = createContext();
 
 //This component is used for fetching api and passing data to FlightList component
@@ -15,6 +14,9 @@ const Home = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(10);
+
+    // const [startPageIndex, endPageIndex, displayPages, totalPages] = usePageHook(5, data ? data.length : 0);
+
 
     const API = 'https://api.instantwebtools.net/v1/airlines';
 
@@ -60,8 +62,8 @@ const Home = () => {
             <UserContext.Provider value={currentPosts}>
                 <ProgressBar now={20} />
                 <FlightList data={currentPosts} isLoading={isLoading} />
-                <Pagination totalPost={totalPosts} postsPerPage={postsPerPage}
-                    setCurrentPage={setCurrentPage}
+                <Pagination totalPost={totalPosts} postsPerPage={postsPerPage} 
+                setCurrentPage={setCurrentPage}
                 />
             </UserContext.Provider>
         </>

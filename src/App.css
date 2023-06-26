@@ -12,12 +12,10 @@ body {
     color: #333;
     /* background-color: black; */
 }
-
 .custom-table {
   padding: 5px;
   width: 100%; 
 }
-
 td{
     padding: 5px;
     width: 10px;

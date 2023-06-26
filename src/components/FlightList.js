@@ -33,6 +33,7 @@ const FlightList = ({isLoading}) => {
                     ))}
                 </tbody>
             </Table>
+            
         </>
     );
 }
