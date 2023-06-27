@@ -68,6 +68,15 @@ const FlightList = ({ isLoading }) => {
                             <Modal.Body>
                                 <p>{selectedFlight.country}</p>
                             </Modal.Body>
+                            <Modal.Body>
+                                <p>{selectedFlight.head_quaters}</p>
+                            </Modal.Body>
+                            <Modal.Body>
+                                <p>{selectedFlight.established}</p>
+                            </Modal.Body>
+                            <Modal.Body>
+                                <p>{selectedFlight.website}</p>
+                            </Modal.Body>
 
                             <Modal.Footer>
                                 <Button variant="secondary">Close</Button>
