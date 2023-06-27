@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import FlightList from './FlightList';
-import Pagination from './Pagination';
+import PageChange from './PageChange';
 import { createContext } from 'react';
 export const UserContext = createContext();
 
@@ -39,8 +39,8 @@ const Home = () => {
         <>
             <UserContext.Provider value={currentPosts}>
                 <FlightList data={currentPosts} isLoading={isLoading} />
-                <Pagination totalPost={totalPosts} postsPerPage={postsPerPage} 
-                setCurrentPage={setCurrentPage}
+                <PageChange totalPost={totalPosts} postsPerPage={postsPerPage} 
+                setCurrentPage={setCurrentPage} currentPage={currentPage}
                 />
             </UserContext.Provider>
         </>
