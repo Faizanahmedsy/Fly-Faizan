@@ -1,15 +1,17 @@
 import React, { useEffect, useState, useContext } from 'react';
-import Table from 'react-bootstrap/Table';
+// import Table from 'react-bootstrap/Table';
 import { UserContext } from './Home';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { Link } from "react-router-dom";
+import FlightDetailsPage from './FlightDetailsPage';
 
 
 
 const FlightList = ({ isLoading }) => {
 
     const currentPosts = useContext(UserContext);
-    const [showModal, setShowModal] = useState(false); 
+    const [showModal, setShowModal] = useState(false);
     const [selectedFlight, setSelectedFlight] = useState(null);
 
     const handelViewClick = (flight) => {
@@ -19,41 +21,46 @@ const FlightList = ({ isLoading }) => {
 
     return (
         <>
-            {isLoading && <h1>Loading...</h1>}
-            <Table striped bordered hover responsive="sm" className="custom-table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Country</th>
-                        <th>Head Quarters</th>
-                        <th>Established</th>
-                        <th>Website</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {!isLoading && currentPosts && currentPosts.length > 0 && currentPosts.map((item) => (
-                        <tr key={item.id}>
-                            <td>{item.name}</td>
-                            <td>{item.country}</td>
-                            <td>{item.head_quaters}</td>
-                            <td>{item.established}</td>
-                            <td>{item.website}</td>
-                            <td>
-                                <button className="btn btn-primary"
-                                    onClick={() => { 
-                                        console.log(item);
-
-                                        return (
-                                        handelViewClick(item)
-                                        )
-                                    }} >View
-                                </button>
-                            </td>
+            {isLoading && <h2>Wait ✋ data is on the way...</h2>}
+            <section className="table_body">
+                <table className="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Country</th>
+                            <th>Head Quarters</th>
+                            <th>Established</th>
+                            <th>Website</th>
+                            <th>More Details</th>
+                            <th>Action</th>
                         </tr>
-                    ))}
-                </tbody>
-            </Table>
+                    </thead>
+
+                    <tbody>
+                        {!isLoading && currentPosts && currentPosts.length > 0 && currentPosts.map((item) => (
+                            <tr key={item.id}>
+                                <td>{item.name}</td>
+                                <td>{item.country}</td>
+                                <td>{item.head_quaters}</td>
+                                <td>{item.established}</td>
+                                <td>{item.website}</td>
+                                <td>
+                                    <button className="btn btn-warning"
+                                        onClick={() => {
+                                            console.log(item);
+
+                                            return (
+                                                handelViewClick(item)
+                                            )
+                                        }} >View
+                                    </button>
+                                </td>
+                                <td><Link to={"/airlines/:" + item.id}>CLick me</Link></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </section>
 
             {
                 showModal && selectedFlight && (
@@ -87,6 +94,7 @@ const FlightList = ({ isLoading }) => {
                     </div>
                 )
             }
+            {/* <FlightDetailsPage data={currentPosts} /> */}
 
 
         </>

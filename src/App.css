@@ -1,32 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lexend:wght@400;600&family=Oswald:wght@500&family=Poppins&display=swap");
+
 * {
-    box-sizing: border-box;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #333;
-    /* background-color: black; */
+  font-family: "Lexend", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #e3ddf0;
+}
+
+h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  font-family: "Lexend", sans-serif;
+  font-size: 2rem;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
 }
 .custom-table {
-  padding: 5px;
-  width: 100%; 
-}
-td{
-    padding: 5px;
-    width: 10px;
-}
-
-th{
-    padding: 5px;
-    width: 10px; 
+  background-color: rgb(236, 236, 236);
+  padding: 15px;
+  width: 95%;
+  margin: 20px;
+  margin-left: 40px;
+  border-radius: 22px;
 }
 
-button{
+thead, tbody {
+  margin: 100px;
+}
+
+th {
+  padding: 25px;
+  width: 10px;
+}
+
+td {
+  padding-left: 25px;
+  padding: 10px 5px 10px 25px;
+  width: 10px;
+}
+
+
+/* button{
     padding: 20px;
     margin-left: 100px;
+} */
+
+.Pagination {
+  padding: 20px;
+  margin-left: 100px;
 }

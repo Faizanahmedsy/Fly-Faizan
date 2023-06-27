@@ -21,7 +21,7 @@ const Home = () => {
     useEffect(() => {
         axios.get(API).then((response) => {
             setData(response.data);
-            console.log(response.data);
+            // console.log(response.data);
             setIsLoading(false);
         }).catch((error) => {
             console.log(error);
@@ -34,14 +34,15 @@ const Home = () => {
     const currentPosts = data ? data.slice(indexOfFirstPost, indexOfLastPost) : [];
     const totalPosts = data ? data.length : 0;
 
-
     return (
         <>
             <UserContext.Provider value={currentPosts}>
+
                 <FlightList data={currentPosts} isLoading={isLoading} />
-                <PageChange totalPost={totalPosts} postsPerPage={postsPerPage} 
-                setCurrentPage={setCurrentPage} currentPage={currentPage}
+                <PageChange totalPost={totalPosts} postsPerPage={postsPerPage}
+                    setCurrentPage={setCurrentPage} currentPage={currentPage}
                 />
+                
             </UserContext.Provider>
         </>
     );

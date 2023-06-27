@@ -3,16 +3,22 @@ import { useParams } from 'react-router-dom';
 import { UserContext } from './Home';
 
 const FlightDetailsPage = () => {
-    const { flightId } = useParams(); // Get the flightId from the URL parameter
+    const params = useParams();
+
+
+
     const currentPosts = useContext(UserContext);
+    // console.log(currentPosts)//Undefined ❌
 
-    // Find the selected flight by the flightId
-    const selectedFlight = currentPosts.find((flight) => flight.id === flightId);
 
-    useEffect(() => {
-        // You can perform any necessary actions or fetch additional flight details here
-        // For example, you can fetch more data based on the flightId
-    }, [flightId]);
+    const selectedFlight = currentPosts.find((flight) => flight.id === params.id);
+
+    console.log(selectedFlight)
+
+    // useEffect(() => {
+    //     // You can perform any necessary actions or fetch additional flight details here
+    //     // For example, you can fetch more data based on the params.id
+    // }, [params.id]);
 
     return (
         <>

@@ -3,7 +3,7 @@ import { Pagination } from 'antd';
 
 const PageChange = ({ totalPost, postsPerPage, setCurrentPage, currentPage }) => {
     let pages = [];
-    console.log(totalPost);
+    // console.log(totalPost);
     for (let i = 1; i <= 10; i++) {
         pages.push(i);
     }
@@ -16,8 +16,8 @@ const PageChange = ({ totalPost, postsPerPage, setCurrentPage, currentPage }) =>
 
     return (
         <div>
-            <Pagination defaultCurrent={6} total={500} onChange={handlePageChange}
-                current={currentPage} />;
+            <Pagination defaultCurrent={6} total={totalPost} onChange={handlePageChange}
+                current={currentPage} className='Pagination' />;
             {/* {pages.map((page, index) => {
                 return (
                     <>
