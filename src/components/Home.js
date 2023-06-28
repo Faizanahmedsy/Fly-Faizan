@@ -42,7 +42,6 @@ const Home = () => {
                 <PageChange totalPost={totalPosts} postsPerPage={postsPerPage}
                     setCurrentPage={setCurrentPage} currentPage={currentPage}
                 />
-                
             </UserContext.Provider>
         </>
     );

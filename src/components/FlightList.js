@@ -19,6 +19,12 @@ const FlightList = ({ isLoading }) => {
         setShowModal(true)
     }
 
+
+    const handelPageClick = (flight) => {
+        setSelectedFlight(flight);
+    }
+
+    console.log(selectedFlight)
     return (
         <>
             {isLoading && <h2>Wait ✋ data is on the way...</h2>}
@@ -55,14 +61,19 @@ const FlightList = ({ isLoading }) => {
                                         }} >View
                                     </button>
                                 </td>
-                                <td><Link to={"/airlines/:" + item.id}>CLick me</Link></td>
+                                <td><Link to={"/airlines/:" + item.id}
+                                    onClick={() => {
+                                        handelPageClick(item)
+                                    }}
+
+                                >CLick me</Link></td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </section>
 
-            {
+            {/* {
                 showModal && selectedFlight && (
                     <div key={selectedFlight.id}
                         className="modal show"
@@ -92,9 +103,18 @@ const FlightList = ({ isLoading }) => {
                             </Modal.Footer>
                         </Modal.Dialog>
                     </div>
+                ) */}
+            {/* } */}
+
+            {
+
+                selectedFlight && (
+                    <div key={selectedFlight.id}>
+                        <FlightDetailsPage selectedFlight={selectedFlight} />
+                    </div>
                 )
+
             }
-            {/* <FlightDetailsPage data={currentPosts} /> */}
 
 
         </>

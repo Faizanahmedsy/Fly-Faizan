@@ -2,16 +2,15 @@ import React, { useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { UserContext } from './Home';
 
-const FlightDetailsPage = () => {
+const FlightDetailsPage = ({ selectedFlight }) => {
     const params = useParams();
-
 
 
     const currentPosts = useContext(UserContext);
     // console.log(currentPosts)//Undefined ❌
 
 
-    const selectedFlight = currentPosts.find((flight) => flight.id === params.id);
+    // const selectedFlight = currentPosts.find((flight) => flight.id === params.id);
 
     console.log(selectedFlight)
 
@@ -23,7 +22,7 @@ const FlightDetailsPage = () => {
     return (
         <>
             {selectedFlight ? (
-                <div>
+                <div key={params.id}>
                     <h1>Flight Details</h1>
                     <p>Name: {selectedFlight.name}</p>
                     <p>Country: {selectedFlight.country}</p>
